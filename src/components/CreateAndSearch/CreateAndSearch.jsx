@@ -8,7 +8,7 @@ function CreateAndSearch() {
 
   return (
     <>
-      <h3> in display container </h3>
+      <h3> Create and search </h3>
     </>
   )
 }

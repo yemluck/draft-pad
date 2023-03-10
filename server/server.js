@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // source in your routes
-const starterRouter = require('./routes/starter.router')
+const templateRouter = require('./routes/template.router')
 
 /** ----------MIDDLEWARE---------------- */
 app.use(bodyParser.json()); // needed for axios request
@@ -17,7 +17,7 @@ app.use(express.static('build')); // for static files
 
 
 /** ----------------EXPRESS ROUTES -------------- */
-app.use('/starter', starterRouter);
+app.use('/starter', templateRouter);
 
 
 

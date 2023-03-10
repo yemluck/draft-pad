@@ -1,4 +1,5 @@
 import { all } from 'redux-saga/effects';
+import draftSaga from './draft.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -12,7 +13,7 @@ export default function* rootSaga() {
     yield all([
         // put all other sagas imported into the root saga here
         // remember sagas are like called functions
-        //e.g. loginSaga()
+        draftSaga(),
 
     ])
 } // end export default

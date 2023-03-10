@@ -6,7 +6,7 @@ const pg = require('pg');
 const Pool = pg.Pool;
 
 const pool = new Pool({
-    database: 'database-name', //name of database
+    database: 'draft_pad', //name of database
     host: 'localhost', // where to find the database
     port: 5432, // port for finding the database
     max: 10, // max number of connections for the pool

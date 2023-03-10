@@ -8,7 +8,7 @@ function DisplayContainer () {
 
   return (
     <>
-    <h3> in display container </h3>
+    <h3 style={{marginLeft: "20px", background: "grey"}}> Display container </h3>
     </>
   )
 }

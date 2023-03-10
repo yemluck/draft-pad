@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate
 } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,8 +11,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import './App.css';
 import Nav from '../Nav/Nav';
-import CreateAndSearch from '../CreateAndSearch/CreateAndSearch';
-import DisplayContainer from '../DisplayContainer/DisplayContainer';
+import FAQ from '../FAQ/FAQ';
+import Footer from '../Footer/Footer';
+import InfoPage from '../InfoPage/InfoPage';
+import AboutPage from '../AboutPage/AboutPage';
+import LandingPage from '../LandingPage/LandingPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,9 +31,13 @@ function App() {
   return (
     <Router>
       <Nav />
-      <CreateAndSearch />
-      <DisplayContainer />
-
+      <Routes>
+        <Route path="home" element={<LandingPage />} />
+        <Route path="info" element={<InfoPage />} />
+        <Route path="faq" element={<FAQ />} />
+        <Route path="about" element={<AboutPage />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

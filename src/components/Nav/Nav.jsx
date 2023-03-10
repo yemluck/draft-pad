@@ -6,9 +6,22 @@ import "./Nav.css"
 function Nav(){
 
   return(
-    <>
-    <h3> Inside Nav Bar </h3>
-    </>
+    <div className="nav">
+        <Link to="home">
+          <h2 className="nav-title">DRAFT PAD</h2>
+        </Link>
+      <div>
+        <Link className="navLink" to="/info">
+          Info
+        </Link>    
+        <Link className="navLink" to="/faq">
+          FAQ
+        </Link>    
+        <Link className="navLink" to="/about">
+          About
+        </Link>
+      </div>
+    </div>
   )
 }
 

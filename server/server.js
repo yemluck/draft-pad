@@ -4,11 +4,13 @@ require('dotenv').config();
 
 const app = express();
 
-// App Set //
-const PORT = process.env.PORT || 5000;
-
 // source in your routes
 const templateRouter = require('./routes/template.router')
+const draftsRouter = require('./routes/drafts.router')
+
+
+
+
 
 /** ----------MIDDLEWARE---------------- */
 app.use(bodyParser.json()); // needed for axios request
@@ -16,8 +18,11 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static('build')); // for static files
 
 
+
+
 /** ----------------EXPRESS ROUTES -------------- */
 app.use('/starter', templateRouter);
+app.use('/api', draftsRouter)
 
 
 
@@ -27,9 +32,8 @@ app.use('/starter', templateRouter);
 
 
 
-
-
-
+// App Set //
+const PORT = process.env.PORT || 5000;
 
 
 // START SERVER

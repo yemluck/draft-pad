@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 // will have to import every reducers into the root reducer
-import draftsReducer from './drafts.reducer';
+import drafts from './drafts.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -11,8 +11,7 @@ import draftsReducer from './drafts.reducer';
 
 const rootReducer = combineReducers({
     // will contain our imported reducers
-    // currently I have no reducer
-    draftsReducer,
+    drafts,
 });
 
 export default rootReducer;

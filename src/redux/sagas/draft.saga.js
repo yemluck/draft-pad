@@ -13,12 +13,18 @@ function* fetchDraftPad(action) {
   }
 } // end function fetchDraftPad
 
-
-
-
+function* createDraft(action){
+  try {
+    yield axios.post('/api/drafts', action.payload)
+    console.log('this is the action.payload', action.payload);
+  } catch (error) {
+    console.log('Error creating draft', error);
+  }
+} // end function createDraft
 
 function* draftPadSaga() {
   yield takeLatest('FETCH_DRAFTS', fetchDraftPad);
+  yield takeLatest('CREATE_DRAFT', createDraft);
 
 }
 

@@ -13,7 +13,6 @@ function CreateAndSearch() {
   const Navigate = useNavigate();
 
   const onCreate = () => {
-    console.log('in on Create');
     Navigate('create');
   }
 

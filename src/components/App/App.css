@@ -4,6 +4,9 @@ body,
   height: 100%;
 }
 
+html {
+  background-color: #c0ebfa;
+}
 h1 {
   background: grey;
   text-align: center;

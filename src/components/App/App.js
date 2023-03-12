@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Navigate
@@ -16,6 +16,7 @@ import Footer from '../Footer/Footer';
 import InfoPage from '../InfoPage/InfoPage';
 import AboutPage from '../AboutPage/AboutPage';
 import LandingPage from '../LandingPage/LandingPage';
+import CreatePage from '../CreateAndSearch/CreatePage';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ function App() {
         <Route path="faq" element={<FAQ />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="*" element={<h1>404 Not found</h1>} />
+        <Route path="create" element={<CreatePage />} />
       </Routes>
       <Footer />
     </Router>

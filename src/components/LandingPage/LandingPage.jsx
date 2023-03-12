@@ -8,8 +8,12 @@ function LandingPage(){
 
   return(
     <>
-    <CreateAndSearch />
-    <DisplayContainer />
+      <div>
+        <CreateAndSearch />
+      </div>
+      <div>
+        <DisplayContainer />
+      </div>
     </>
   )
 }

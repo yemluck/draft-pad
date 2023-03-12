@@ -22,7 +22,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({type: 'FETCH_DATA'});
+    dispatch({type: 'FETCH_DRAFTS'});
   }, [dispatch]);
 
 

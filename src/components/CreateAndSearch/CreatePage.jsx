@@ -9,9 +9,9 @@ function CreatePage(){
 
   return(
     <>
-      <CreateForm />
+      <CreateForm /><br></br>
       <Link to="/">
-        <Button sx={{marginLeft: "20px"}}variant="contained" startIcon={<BackspaceIcon />}>
+        <Button sx={{marginLeft: "530px"}}variant="contained" startIcon={<BackspaceIcon />}>
           Cancel
         </Button>
       </Link>

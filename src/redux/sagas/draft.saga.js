@@ -18,7 +18,7 @@ function* fetchDraftPad(action) {
 
 
 function* draftPadSaga() {
-  yield takeLatest('FETCH_DATA', fetchDraftPad);
+  yield takeLatest('FETCH_DRAFTS', fetchDraftPad);
 
 }
 

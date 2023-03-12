@@ -32,10 +32,11 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route path="home" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="info" element={<InfoPage />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="*" element={<h1>404 Not found</h1>} />
       </Routes>
       <Footer />
     </Router>

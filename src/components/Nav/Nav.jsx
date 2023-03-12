@@ -7,7 +7,7 @@ function Nav(){
 
   return(
     <div className="nav">
-        <Link to="home">
+        <Link to="/">
           <h2 className="nav-title">DRAFT PAD</h2>
         </Link>
       <div>

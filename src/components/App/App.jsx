@@ -17,6 +17,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import AboutPage from '../AboutPage/AboutPage';
 import LandingPage from '../LandingPage/LandingPage';
 import CreatePage from '../CreateAndSearch/CreatePage';
+import DetailedDraft from '../DetailedDraft/DetailedDraft';
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function App() {
         <Route path="about" element={<AboutPage />} />
         <Route path="*" element={<h1>404 Not found</h1>} />
         <Route path="create" element={<CreatePage />} />
+        <Route path="/:id" element={<DetailedDraft />} />
       </Routes>
       <Footer />
     </Router>

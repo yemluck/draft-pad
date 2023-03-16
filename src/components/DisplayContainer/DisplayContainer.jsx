@@ -39,8 +39,8 @@ function DisplayContainer () {
                 </CardContent>
                 <DeleteForeverIcon 
                   sx={{paddingLeft: '20px', }}
-                  onMouseEnter={() => setIsShown(true)}
-                  onMouseLeave={() => setIsShown(false)}
+                  onMouseEnter={(e) => {setIsShown(true, e); e.target.style.background = '#3fff'}}
+                  onMouseLeave={(e) => {setIsShown(false); e.target.style.background = 'white' }}
                   fontSize='large' className='delBtn'>
                      Delete 
 

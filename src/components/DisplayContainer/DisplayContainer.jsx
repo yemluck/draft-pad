@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DisplayContainer.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -11,13 +11,13 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function DisplayContainer () {
   const drafts = useSelector((store) => store.drafts)
+  const [isShown, setIsShown] = useState(false);
   const navigate = useNavigate();
   const detailedView = (draft) => {
-    console.log('this is the draft', draft);
     navigate(`/${draft.id}`)
   }
 
@@ -27,18 +27,28 @@ function DisplayContainer () {
   return (
     <>
       <Container maxWidth="lg">
-        <Box sx={{bgcolor: 'white', height: "75vh"}}>
+        <Box sx={{bgcolor: 'white', height: "75vh", }}>
           {drafts.map(draft => {
             return(
-              <Card onClick={() => detailedView(draft)} key={draft.id}>
-                <CardContent>
+              <Card sx={{width: '300px',height: '300px', display: "inline-block", overflow: "scroll", margin: "10px"}} key={draft.id}>
+                <CardContent onClick={() => detailedView(draft)}>
                   <Typography>{draft.title}</Typography>
                   <Typography>{draft.date}</Typography>
                   <Typography>{draft.note}</Typography>
                   <Typography>{draft.rating}</Typography>
                 </CardContent>
-                <Button onClick={()=> console.log('in on click')}> Edit</Button>
-                <Button> Delete </Button>
+                <DeleteForeverIcon 
+                  sx={{paddingLeft: '20px', }}
+                  onMouseEnter={() => setIsShown(true)}
+                  onMouseLeave={() => setIsShown(false)}
+                  fontSize='large' className='delBtn'>
+                     Delete 
+
+                </DeleteForeverIcon>
+                {
+                  isShown &&
+                  <div>Click to delete</div>
+                }
               </Card>
             )
           })}

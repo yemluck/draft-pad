@@ -30,15 +30,18 @@ function DisplayContainer () {
         <Box sx={{bgcolor: 'white', height: "75vh", }}>
           {drafts.map(draft => {
             return(
-              <Card sx={{width: '300px',height: '300px', display: "inline-block", overflow: "scroll", margin: "10px"}} key={draft.id}>
-                <CardContent onClick={() => detailedView(draft)}>
+              <div>
+                <Card onClick={() => detailedView(draft)} sx={{width: '300px',height: '300px', display: "inline-block", overflow: "scroll", margin: "10px"}} key={draft.id}>
+                <CardContent >
                   <Typography>{draft.title}</Typography>
                   <Typography>{draft.date}</Typography>
                   <Typography>{draft.note}</Typography>
                   <Typography>{draft.rating}</Typography>
                 </CardContent>
-                <DeleteForeverIcon 
-                  sx={{paddingLeft: '20px', }}
+              </Card>
+              <div>
+              <DeleteForeverIcon 
+                  sx={{paddingLeft: '150px', }}
                   onMouseEnter={(e) => {setIsShown(true, e); e.target.style.background = '#3fff'}}
                   onMouseLeave={(e) => {setIsShown(false); e.target.style.background = 'white' }}
                   fontSize='large' className='delBtn'>
@@ -46,10 +49,11 @@ function DisplayContainer () {
 
                 </DeleteForeverIcon>
                 {
-                  isShown &&
-                  <div>Click to delete</div>
-                }
-              </Card>
+              isShown &&
+                <div>Click to delete</div>
+            }
+              </div>
+            </div>
             )
           })}
         </Box>

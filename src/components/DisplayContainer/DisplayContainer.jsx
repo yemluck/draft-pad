@@ -30,8 +30,9 @@ function DisplayContainer () {
         <Box sx={{bgcolor: 'white', height: "75vh", }}>
           {drafts.map(draft => {
             return(
+              <div key={draft.id}>
               <div>
-                <Card onClick={() => detailedView(draft)} sx={{width: '300px',height: '300px', display: "inline-block", overflow: "scroll", margin: "10px"}} key={draft.id}>
+                <Card onClick={() => detailedView(draft)} sx={{width: '300px',height: '300px', display: "inline-block", overflow: "scroll", margin: "10px"}} >
                 <CardContent >
                   <Typography>{draft.title}</Typography>
                   <Typography>{draft.date}</Typography>
@@ -53,6 +54,7 @@ function DisplayContainer () {
                 <div>Click to delete</div>
             }
               </div>
+            </div>
             </div>
             )
           })}

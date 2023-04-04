@@ -10,3 +10,13 @@
   background-color: red;
 } */
 
+.delBtn {
+ margin-right: 20px;
+ margin-left: 100px;
+ margin-bottom: 10px;
+}
+
+.editBtn {
+ margin-left: 20px;
+ margin-bottom: 10px;
+}

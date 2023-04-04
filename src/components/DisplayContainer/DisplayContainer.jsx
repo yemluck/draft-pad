@@ -12,6 +12,8 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+import Tooltip from '@mui/material/Tooltip';
 
 function DisplayContainer () {
   const drafts = useSelector((store) => store.drafts)
@@ -26,8 +28,8 @@ function DisplayContainer () {
 
   return (
     <>
-      <Container maxWidth="lg">
-        <Box sx={{bgcolor: 'white', height: "75vh", }}>
+      <Container width="lg">
+        <Box sx={{bgcolor: 'white', minHeight: "75vh", overflow: "scroll" }}>
           {drafts.map(draft => {
             return(
               <div key={draft.id}>
@@ -40,21 +42,20 @@ function DisplayContainer () {
                   <Typography>{draft.rating}</Typography>
                 </CardContent>
               </Card>
-              <div>
-              <DeleteForeverIcon 
-                  sx={{paddingLeft: '150px', }}
-                  onMouseEnter={(e) => {setIsShown(true, e); e.target.style.background = '#3fff'}}
-                  onMouseLeave={(e) => {setIsShown(false); e.target.style.background = 'white' }}
-                  fontSize='large' className='delBtn'>
-                     Delete 
-
-                </DeleteForeverIcon>
-                {
-              isShown &&
-                <div>Click to delete</div>
-            }
               </div>
-            </div>
+              <div>
+              <Tooltip title="Delete" arrow>
+                      <DeleteForeverIcon
+                        fontSize='large' className='delBtn'>
+                        Delete
+                      </DeleteForeverIcon>
+              </Tooltip>
+              <Tooltip title="Edit" arrow>
+                      <EditIcon className='editBtn'>
+                        Edit
+                      </EditIcon>
+              </Tooltip>
+              </div>
             </div>
             )
           })}

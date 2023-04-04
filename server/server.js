@@ -5,7 +5,8 @@ require('dotenv').config();
 const app = express();
 
 // source in your routes
-const draftsRouter = require('./routes/drafts.router')
+const draftsRouter = require('./routes/drafts.router');
+const draftDetailRouter = require('./routes/draftDetail.router');
 
 
 
@@ -20,7 +21,8 @@ app.use(express.static('build')); // for static files
 
 
 /** ----------------EXPRESS ROUTES -------------- */
-app.use('/api', draftsRouter)
+app.use('/api', draftsRouter);
+app.use('/api', draftDetailRouter);
 
 
 
